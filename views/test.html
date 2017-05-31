@@ -1,0 +1,130 @@
+
+    <!-- nav end -->
+<h1>StudyTracker</h1>
+
+    <!-- <form class="" action="index.html" method="post">
+      <p>Subject</p>
+      <input type="text" ng-model="birds"><br>
+<p>{{birds}}</p>
+      <input type="text" ng-model="words"/>
+      <p>{{words}}</p>
+    </form> -->
+
+<div class="w3-animate-opacity" id="left-pane">
+    <!-- // Month Section -->
+    <!-- //Row A -->
+<!--    <div class ="container">-->
+      <div id="seatSelection">
+          <div class="row" id="rowA">
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 1 }" id="A1" ng-click="selectedDate = 1" >June 1</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 2 }" id="A2" ng-click="selectedDate = 2" >June 2</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 3 }" id="A3" ng-click="selectedDate = 3" >June 3</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 4 }" id="A4" ng-click="selectedDate = 4" >June 4</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 5 }" id="A5" ng-click="selectedDate = 5" >June 5</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 6 }" id="A6" ng-click="selectedDate = 6" >June 6</div>
+          </div>
+          <!-- //Row B -->
+          <div class="row" id="rowB">
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 7 }" id="B1" ng-click="selectedDate = 7" >June 7</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 8 }" id="B2" ng-click="selectedDate = 8" >June 8</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 9 }" id="B3" ng-click="selectedDate = 9" >June 9</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 10 }" id="B4" ng-click="selectedDate = 10" >June 10</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 11 }" id="B5" ng-click="selectedDate = 11" >June 11</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 12 }" id="B6" ng-click="selectedDate = 12" >June 12</div>
+          </div>
+          <!-- //Row C -->
+          <div class="row" id="rowC">
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 13 }" id="C1" ng-click="selectedDate = 13" >June 13</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 14 }" id="C2" ng-click="selectedDate = 14" >June 14</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 15 }" id="C3" ng-click="selectedDate = 15" >June 15</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 16 }" id="C4" ng-click="selectedDate = 16" >June 16</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 17 }" id="C5" ng-click="selectedDate = 17" >June 17</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 18 }" id="C6" ng-click="selectedDate = 18" >June 18</div>
+          </div>
+          <!-- //Row D -->
+          <div class="row" id="rowD">
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 19 }" id="D1" ng-click="selectedDate = 19" >June 19</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 20 }" id="D2" ng-click="selectedDate = 20" >June 20</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 21 }" id="D3" ng-click="selectedDate = 21" >June 21</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 22 }" id="D4" ng-click="selectedDate = 22" >June 22</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 23 }" id="D5" ng-click="selectedDate = 23" >June 23</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 24 }" id="D6" ng-click="selectedDate = 24" >June 24</div>
+          </div>
+          <!-- Row E -->
+          <div class="row" id="rowE">
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 25 }" id="E1" ng-click="selectedDate = 25" >June 25</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 26 }" id="E2" ng-click="selectedDate = 26" >June 26</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 27 }" id="E3" ng-click="selectedDate = 27" >June 27</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 28 }" id="E4" ng-click="selectedDate = 28" >June 28</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 29 }" id="E5" ng-click="selectedDate = 29" >June 29</div>
+            <div class="col-sm-1" ng-class="{ red: selectedDate === 30 }" id="E6" ng-click="selectedDate = 30" >June 30</div>
+          </div>
+        <button class="w3-btn w3-khaki w3-round-large" id='ready-button' ng-click="submitDate();">Submit</button>
+      </div>
+
+    <!-- //end of container for month -->
+</div>
+
+<div id="right-pane">
+<!-- //Instructions -->
+    <div id="marquee">
+        <ul><h3>How to Use Study Tracker</h3>
+          <li>Click on the day of the month you wish to record study contributed to studying</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
+    </div>
+
+    <!-- // Form -->
+    <form class="type" ng-show="showForm">
+
+        <div>
+            <label>Subject:</label>
+            <br>
+            <input class="w3-input" type="text" placeholder="Enter subject" id="subject" ng-model="info.subject">
+        </div>
+        <div>
+            <label>Assignment:</label>
+            <br>
+            <input class="w3-input" type="text" placeholder="Enter assignment" id="hour1" ng-model="info.assign">
+        </div>
+        <div>
+            <label>Hours Completed</label>
+            <br>
+            <input class="w3-input" type="number" placeholder="Enter hour(s) spent studying" id="hour2" ng-model="info.hours">
+        </div>
+        <div>
+            <br>
+            <!-- <input class="w3-input" type="text" placeholder="555-555-5555" id="phoneNum"> -->
+            <!-- <input class="w3-input" id="phoneNum" type="text" placeholder="Enter Due Date..." ng-model="words"/-->
+            <p class="w3-input" id="phoneNum">Due Dates: Algebra - practice 3.2 due April fifth, English - Article due April 31</p>
+
+        </div>
+        <div>
+            <button type= 'button' class="w3-btn w3-khaki w3-round-large" id="form-submit" ng-click="addItem(info)">Submit</button>
+            <button type= 'button' class="w3-btn w3-khaki w3-round-large" id="reset">Reset</button>
+        </div>
+    </form>
+  </div>
+
+  <h3>Previous Assignments Completed</h3>
+
+  <div class="">
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Subject</th>
+        <th>Assignment</th>
+        <th>Amount of Hours Completed</th>
+      </tr>
+      <tr ng-repeat="item in studentInfo">
+        <td>June {{item.date}}</td>
+        <td>{{item.subject}}</td>
+        <td>{{item.assign}}</td>
+        <td>{{item.hours}}</td>
+      </tr>
+    </table>
+
+  </div>

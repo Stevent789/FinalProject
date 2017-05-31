@@ -1,0 +1,17 @@
+#map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+
+      body {
+        background-color: tan;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      ul.things {
+        font-size: 20px;
+      }
