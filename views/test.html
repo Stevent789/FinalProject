@@ -1,20 +1,10 @@
+<div class="backimg">
 
-    <!-- nav end -->
-<h1>StudyTracker</h1>
-
-    <!-- <form class="" action="index.html" method="post">
-      <p>Subject</p>
-      <input type="text" ng-model="birds"><br>
-<p>{{birds}}</p>
-      <input type="text" ng-model="words"/>
-      <p>{{words}}</p>
-    </form> -->
-
-<div class="w3-animate-opacity" id="left-pane">
-    <!-- // Month Section -->
-    <!-- //Row A -->
-<!--    <div class ="container">-->
-      <div id="seatSelection">
+  <div class="w3-animate-opacity" id="left-pane">
+      <!-- // Month Section -->
+      <!-- //Row A -->
+      <!--    <div class ="container">-->
+        <div id="dateSelection">
           <div class="row" id="rowA">
             <div class="col-sm-1" ng-class="{ red: selectedDate === 1 }" id="A1" ng-click="selectedDate = 1" >June 1</div>
             <div class="col-sm-1" ng-class="{ red: selectedDate === 2 }" id="A2" ng-click="selectedDate = 2" >June 2</div>
@@ -59,72 +49,55 @@
             <div class="col-sm-1" ng-class="{ red: selectedDate === 29 }" id="E5" ng-click="selectedDate = 29" >June 29</div>
             <div class="col-sm-1" ng-class="{ red: selectedDate === 30 }" id="E6" ng-click="selectedDate = 30" >June 30</div>
           </div>
+        </div>
         <button class="w3-btn w3-khaki w3-round-large" id='ready-button' ng-click="submitDate();">Submit</button>
-      </div>
+      <!-- //end of container for month -->
+  </div>
 
-    <!-- //end of container for month -->
-</div>
+  <div id="right-pane">
 
-<div id="right-pane">
-<!-- //Instructions -->
-    <div id="marquee">
-        <ul><h3>How to Use Study Tracker</h3>
-          <li>Click on the day of the month you wish to record study contributed to studying</li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-      </ul>
+      <!-- // Form -->
+      <form class="type" ng-show="showForm">
+
+        <div>
+          <label>Subject:</label>
+          <br>
+          <input class="w3-input" type="text" placeholder="Enter subject" id="subject" ng-model="info.subject">
+        </div>
+        <div>
+          <label>Assignment:</label>
+          <br>
+          <input class="w3-input" type="text" placeholder="Enter assignment" id="hour1" ng-model="info.assign">
+        </div>
+        <div>
+          <label>Hours Completed</label>
+          <br>
+          <input class="w3-input" type="number" placeholder="Enter hour(s) spent studying" id="hour2" ng-model="info.hours">
+        </div>
+        <div>
+          <button type= 'button' class="w3-btn w3-khaki w3-round-large" id="form-submit" ng-click="addItem(info)">Record Time</button>
+        </div>
+      </form>
     </div>
+  <div class="log">
 
-    <!-- // Form -->
-    <form class="type" ng-show="showForm">
+    <h3>Previous Assignments Completed</h3>
 
-        <div>
-            <label>Subject:</label>
-            <br>
-            <input class="w3-input" type="text" placeholder="Enter subject" id="subject" ng-model="info.subject">
-        </div>
-        <div>
-            <label>Assignment:</label>
-            <br>
-            <input class="w3-input" type="text" placeholder="Enter assignment" id="hour1" ng-model="info.assign">
-        </div>
-        <div>
-            <label>Hours Completed</label>
-            <br>
-            <input class="w3-input" type="number" placeholder="Enter hour(s) spent studying" id="hour2" ng-model="info.hours">
-        </div>
-        <div>
-            <br>
-            <!-- <input class="w3-input" type="text" placeholder="555-555-5555" id="phoneNum"> -->
-            <!-- <input class="w3-input" id="phoneNum" type="text" placeholder="Enter Due Date..." ng-model="words"/-->
-            <p class="w3-input" id="phoneNum">Due Dates: Algebra - practice 3.2 due April fifth, English - Article due April 31</p>
-
-        </div>
-        <div>
-            <button type= 'button' class="w3-btn w3-khaki w3-round-large" id="form-submit" ng-click="addItem(info)">Submit</button>
-            <button type= 'button' class="w3-btn w3-khaki w3-round-large" id="reset">Reset</button>
-        </div>
-    </form>
+    <div>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Subject</th>
+          <th>Assignment</th>
+          <th>Amount of Hours Completed</th>
+        </tr>
+        <tr ng-repeat="item in studentInfo">
+          <td>June {{item.date}}</td>
+          <td>{{item.subject}}</td>
+          <td>{{item.assign}}</td>
+          <td>{{item.hours}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
-
-  <h3>Previous Assignments Completed</h3>
-
-  <div class="">
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Subject</th>
-        <th>Assignment</th>
-        <th>Amount of Hours Completed</th>
-      </tr>
-      <tr ng-repeat="item in studentInfo">
-        <td>June {{item.date}}</td>
-        <td>{{item.subject}}</td>
-        <td>{{item.assign}}</td>
-        <td>{{item.hours}}</td>
-      </tr>
-    </table>
-
-  </div>
+</div>
